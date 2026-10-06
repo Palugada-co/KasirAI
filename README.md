@@ -1,61 +1,3 @@
-# KasirAI - Smart Point of Sale (POS) System
-
-Sistem Point of Sale (POS) modern, minimalis, dan cerdas dengan integrasi analisis AI Copilot (OpenClaw / n8n Webhook ready), manajemen stok real-time, dan simulasi cetak struk thermal 58mm/80mm.
-
----
-
-## 🚀 Tech Stack
-
-* **Core Framework:** React 19 / 18+ (Vite)
-* **Language:** TypeScript
-* **Styling:** Tailwind CSS v4 (Desain minimalis, netral & high-contrast)
-* **Icons:** Lucide React
-* **State Management:** Zustand (Cart, Session Kasir, Inventori, Transaksi, Shift Aktif) & TanStack React Query
-* **Routing:** React Router v6 (Lazy code splitting)
-* **Form Handling & Validation:** React Hook Form + Zod
-* **Charts & Analytics:** Recharts (Area & Bar chart)
-
----
-
-## 🎨 Design System & Color Palette
-
-* `bg-background`: `#FAFAFA` (Off-white canvas)
-* `bg-surface`: `#FFFFFF` (Card & modal background)
-* `text-primary`: `#111827` (Zinc/Gray 900)
-* `text-muted`: `#6B7280` (Zinc/Gray 500)
-* `border-default`: `#E5E7EB` (Gray 200)
-* `btn-primary`: `#18181B` (Zinc 900)
-* `btn-secondary`: `#F4F4F5` (Zinc 100)
-* `status-success`: `#10B981` (Muted Emerald)
-* `status-warning`: `#F59E0B` (Muted Amber)
-* `status-danger`: `#EF4444` (Muted Rose)
-
----
-
-## 📂 Struktur Direktori
-
-```text
-src/
-├── assets/             # Media, Logo, Static Icons
-├── components/         # Reusable UI Components
-│   ├── ui/             # Button, Input, Card, Modal, Badge, StockBadge
-│   ├── layout/         # Sidebar, Header, PageContainer, ShiftModal
-│   └── shared/         # Toast provider & notifications
-├── features/           # Feature-based Modular Architecture
-│   ├── auth/           # LoginForm, RegisterForm, AuthGuard, AuthLayout
-│   ├── cashier/        # SearchBar, CategoryFilter, ProductCard, ProductGrid, CartPanel, PaymentModal, ReceiptModal
-│   ├── inventory/      # InventoryTable, StockAdjustmentModal, AddEditProductModal
-│   ├── dashboard/      # StatCards, SalesChart, RecentTransactions
-│   └── ai-assistant/   # ChatWindow, MessageBubble, QuickPromptChip, ChatInput
-├── hooks/              # Custom React Hooks (useScanner, useThermalPrinter)
-├── store/              # Zustand Stores (useUserStore, useCartStore, useInventoryStore, useTransactionStore, useAIStore)
-├── types/              # TypeScript Interfaces & Types
-├── pages/              # Halaman Utama (CashierPage, InventoryPage, DashboardPage, AIAssistantPage, LoginPage, RegisterPage)
-└── routes/             # React Router v6 Configuration
-```
-
----
-
 ## 💡 Fitur Utama
 
 ### 1. Autentikasi Kasir & Admin (`/login` & `/register`)
@@ -82,7 +24,7 @@ src/
 * **Grafik Penjualan Recharts:** Visualisasi tren penjualan per jam atau 7 hari terakhir (pilihan Area Chart / Bar Chart).
 * **5 Transaksi Terkini:** Tabel transaksi dengan tombol pratinjau struk ulang.
 
-### 5. AI Copilot KasirAI (`/ai-assistant`)
+### 5. AI Chatbot KasirAI (`/ai-assistant`)
 * Terhubung langsung dengan database transaksi dan inventori secara real-time.
 * **Quick Prompt Chips:**
   - *"Berapa omzet hari ini?"* (Menghitung total omzet, breakdown tunai/QRIS/kartu, rata-rata transaksi)
@@ -136,30 +78,7 @@ src/
 
 ---
 
-## Deploy ke Vercel
+Atau
 
-1. Push repository ini ke GitHub.
-2. Di Vercel, pilih **Add New Project** lalu import repository GitHub tersebut.
-3. Biarkan pengaturan build default Vite, atau gunakan:
-   - Build command: `npm run build`
-   - Output directory: `dist`
-4. Tambahkan environment variable `VITE_N8N_CHATBOT_WEBHOOK_URL` di Project Settings jika fitur AI assistant digunakan.
-
----
-
-## Upload ke GitHub
-
-Repositori git lokal sudah diinisialisasi dan seluruh kode sudah di-commit. Untuk meng-upload ke repository GitHub Anda:
-
-```bash
-# 1. Ubah branch default menjadi main
-git branch -M main
-
-# 2. Tambahkan URL repository GitHub Anda
-git remote add origin https://github.com/<USERNAME>/<REPOSITORY>.git
-
-# 3. Commit perubahan jika belum dilakukan, lalu push
-git add .
-git commit -m "Prepare app for Vercel deployment"
-git push -u origin main
-```
+akses link ini
+```https://kasir-ai-orcin.vercel.app/```
