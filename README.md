@@ -133,3 +133,33 @@ src/
    ```bash
    npm run build
    ```
+
+---
+
+## Deploy ke Vercel
+
+1. Push repository ini ke GitHub.
+2. Di Vercel, pilih **Add New Project** lalu import repository GitHub tersebut.
+3. Biarkan pengaturan build default Vite, atau gunakan:
+   - Build command: `npm run build`
+   - Output directory: `dist`
+4. Tambahkan environment variable `VITE_N8N_CHATBOT_WEBHOOK_URL` di Project Settings jika fitur AI assistant digunakan.
+
+---
+
+## Upload ke GitHub
+
+Repositori git lokal sudah diinisialisasi dan seluruh kode sudah di-commit. Untuk meng-upload ke repository GitHub Anda:
+
+```bash
+# 1. Ubah branch default menjadi main
+git branch -M main
+
+# 2. Tambahkan URL repository GitHub Anda
+git remote add origin https://github.com/<USERNAME>/<REPOSITORY>.git
+
+# 3. Commit perubahan jika belum dilakukan, lalu push
+git add .
+git commit -m "Prepare app for Vercel deployment"
+git push -u origin main
+```
