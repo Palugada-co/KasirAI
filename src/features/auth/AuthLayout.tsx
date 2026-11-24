@@ -14,13 +14,14 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({ children, title, subtitl
         {/* Brand Logo */}
         <div className="flex justify-center mb-6">
           <div className="flex items-center gap-2.5">
-            <div className="w-12 h-12 rounded-2xl bg-[#18181B] flex items-center justify-center text-white shadow-md">
-              <span className="text-xl font-extrabold tracking-tight">K</span>
-              <Sparkles className="w-4 h-4 -ml-0.5 text-amber-300" />
-            </div>
+            <img
+              src="/logo.png"
+              alt="PaluPay"
+              className="w-12 h-12 rounded-2xl object-contain shadow-md"
+            />
             <div>
               <div className="flex items-center gap-2">
-                <span className="font-extrabold text-2xl tracking-tight text-zinc-950">KasirAI</span>
+                <span className="font-extrabold text-2xl tracking-tight text-zinc-950">PaluPay</span>
                 <span className="text-xs bg-zinc-200 text-zinc-800 font-bold px-2 py-0.5 rounded-full">
                   POS
                 </span>

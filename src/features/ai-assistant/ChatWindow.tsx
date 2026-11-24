@@ -6,13 +6,9 @@ import { useAIStore, QUICK_PROMPTS } from '../../store/useAIStore'
 import { Button } from '../../components/ui/Button'
 import { Input } from '../../components/ui/Input'
 import {
-  Bot,
-  Sparkles,
   RotateCcw,
   Settings2,
-  CheckCircle2,
   Globe,
-  Radio,
   Loader2,
 } from 'lucide-react'
 
@@ -51,13 +47,15 @@ export const ChatWindow: React.FC = () => {
         {/* Header */}
         <div className="px-5 py-3.5 border-b border-zinc-200 bg-white flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-zinc-950 flex items-center justify-center text-white shadow-xs">
-              <Sparkles className="w-5 h-5 text-amber-300" />
-            </div>
+            <img
+              src="/logo.png"
+              alt="PaluPay"
+              className="w-10 h-10 rounded-xl object-contain shadow-xs"
+            />
             <div>
               <div className="flex items-center gap-2">
                 <h2 className="text-sm font-bold text-zinc-900 leading-tight">
-                  KasirAI Copilot
+                  PaluPay Copilot
                 </h2>
                 <span className="inline-flex items-center gap-1 text-[10px] bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded-full font-semibold">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
@@ -103,21 +101,21 @@ export const ChatWindow: React.FC = () => {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-1.5 font-bold text-zinc-800">
                 <Globe className="w-4 h-4 text-zinc-600" />
-                <span>Pengaturan Webhook n8n / OpenClaw Server</span>
+                <span>Pengaturan Webhook n8n / OpenClaw Server / API AI</span>
               </div>
               <span className="text-[10px] text-zinc-400">
                 Env: VITE_N8N_CHATBOT_WEBHOOK_URL
               </span>
             </div>
             <p className="text-[11px] text-zinc-500">
-              Masukkan URL webhook n8n jika Anda ingin mengarahkan pertanyaan ke workflow backend kustom:
+              Masukkan URL webhook n8n / API Agent AI lainnya jika Anda ingin mengarahkan pertanyaan ke workflow backend kustom:
             </p>
             <div className="flex gap-2">
               <Input
                 type="url"
                 value={inputWebhook}
                 onChange={(e) => setInputWebhook(e.target.value)}
-                placeholder="https://n8n.yourdomain.com/webhook/kasirai-chat"
+                placeholder="https://n8n.yourdomain.com/webhook/palupay-chat"
                 className="h-9 text-xs"
               />
               <Button type="submit" variant="primary" size="sm" className="h-9 px-4 shrink-0">
@@ -136,12 +134,14 @@ export const ChatWindow: React.FC = () => {
           {/* Typing Indicator */}
           {isLoading && (
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-xl bg-zinc-950 flex items-center justify-center text-amber-300 shadow-2xs">
-                <Sparkles className="w-4 h-4" />
-              </div>
+              <img
+                src="/favicon.png"
+                alt="PaluPay"
+                className="w-8 h-8 rounded-xl object-contain shadow-2xs"
+              />
               <div className="bg-white border border-zinc-200 px-4 py-2.5 rounded-2xl rounded-tl-xs shadow-2xs flex items-center gap-2 text-xs text-zinc-500">
                 <Loader2 className="w-3.5 h-3.5 animate-spin text-zinc-700" />
-                <span>KasirAI sedang menganalisa data POS toko...</span>
+                <span>PaluPay sedang menganalisa data POS toko...</span>
               </div>
             </div>
           )}

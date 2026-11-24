@@ -4,6 +4,7 @@ import {
   Store,
   Boxes,
   LayoutDashboard,
+  ScanLine,
   Bot,
   LogOut,
   Sparkles,
@@ -47,9 +48,15 @@ export const Sidebar: React.FC<SidebarProps> = ({
       label: 'Dashboard & Omzet',
     },
     {
+      to: '/ocr-bookkeeping',
+      icon: ScanLine,
+      label: 'OCR Pembukuan',
+      badge: 'Baru',
+    },
+    {
       to: '/ai-assistant',
       icon: Bot,
-      label: 'KasirAI Copilot',
+      label: 'PaluPay Copilot',
       highlight: true,
       badge: 'OpenClaw',
     },
@@ -78,13 +85,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
         {/* Brand Header */}
         <div className="h-16 flex items-center justify-between px-5 border-b border-[#E5E7EB]">
           <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-xl bg-[#18181B] flex items-center justify-center text-white font-bold shadow-xs">
-              <span className="text-base tracking-tight font-extrabold">K</span>
-              <Sparkles className="w-3.5 h-3.5 -ml-0.5 text-amber-300" />
-            </div>
+            <img
+              src="/logo.png"
+              alt="PaluPay"
+              className="w-9 h-9 rounded-xl object-contain shadow-xs"
+            />
             <div>
               <div className="flex items-center gap-1.5">
-                <span className="font-extrabold text-base tracking-tight text-zinc-950">KasirAI</span>
+                <span className="font-extrabold text-base tracking-tight text-zinc-950">PaluPay</span>
                 <span className="text-[10px] bg-zinc-100 text-zinc-700 px-1.5 py-0.5 rounded font-mono font-medium">v1.0</span>
               </div>
               <p className="text-[11px] text-zinc-500 truncate max-w-[140px]">

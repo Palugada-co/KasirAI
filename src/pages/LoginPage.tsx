@@ -6,7 +6,7 @@ export const LoginPage: React.FC = () => {
   return (
     <AuthLayout
       title="Masuk ke Akun Kasir"
-      subtitle="Kelola pesanan pelanggan dan operasional kasir dengan KasirAI"
+      subtitle="Kelola pesanan pelanggan dan operasional kasir dengan PaluPay"
     >
       <LoginForm />
     </AuthLayout>

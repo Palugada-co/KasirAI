@@ -27,7 +27,7 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenSearch,
   onOpenShiftModal,
   onToggleCart,
-  title = 'Kasir AI',
+  title = 'PaluPay',
   subtitle,
 }) => {
   const [currentTime, setCurrentTime] = useState(new Date())

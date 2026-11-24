@@ -1,6 +1,6 @@
 import React from 'react'
 import { ChatMessage } from '../../types'
-import { Sparkles, User, Bot, Clock } from 'lucide-react'
+import { User, Bot, Clock } from 'lucide-react'
 import { cn } from '../../lib/utils'
 
 interface MessageBubbleProps {
@@ -60,16 +60,17 @@ export const MessageBubble: React.FC<MessageBubbleProps> = ({ message }) => {
       )}
     >
       {/* Avatar */}
-      <div
-        className={cn(
-          'w-8 h-8 rounded-xl flex items-center justify-center shrink-0 shadow-2xs text-xs font-bold',
-          isUser
-            ? 'bg-zinc-900 text-white'
-            : 'bg-[#18181B] text-amber-300'
-        )}
-      >
-        {isUser ? <User className="w-4 h-4" /> : <Sparkles className="w-4 h-4" />}
-      </div>
+      {isUser ? (
+        <div className="w-8 h-8 rounded-xl flex items-center justify-center shrink-0 shadow-2xs text-xs font-bold bg-zinc-900 text-white">
+          <User className="w-4 h-4" />
+        </div>
+      ) : (
+        <img
+          src="/favicon.png"
+          alt="PaluPay"
+          className="w-8 h-8 rounded-xl object-contain shrink-0 shadow-2xs"
+        />
+      )}
 
       {/* Bubble Container */}
       <div className="space-y-1">
@@ -84,7 +85,7 @@ export const MessageBubble: React.FC<MessageBubbleProps> = ({ message }) => {
           {!isUser && (
             <div className="flex items-center gap-1.5 mb-2 pb-1.5 border-b border-zinc-100 text-[11px] font-bold text-zinc-900">
               <Bot className="w-3.5 h-3.5 text-zinc-700" />
-              <span>KasirAI Copilot</span>
+              <span>PaluPay Copilot</span>
               <span className="text-[10px] bg-zinc-100 text-zinc-500 font-mono px-1.5 py-0.2 rounded font-normal">
                 OpenClaw
               </span>

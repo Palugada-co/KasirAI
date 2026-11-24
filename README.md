@@ -24,7 +24,17 @@
 * **Grafik Penjualan Recharts:** Visualisasi tren penjualan per jam atau 7 hari terakhir (pilihan Area Chart / Bar Chart).
 * **5 Transaksi Terkini:** Tabel transaksi dengan tombol pratinjau struk ulang.
 
-### 5. AI Chatbot KasirAI (`/ai-assistant`)
+### 5. OCR Pembukuan Catatan Transaksi (`/ocr-bookkeeping`)
+* Pindai dan ekstrak foto catatan tulisan tangan (catatan penjualan harian, nota belanja, log kasir).
+* Tampilan terstruktur mirip struk belanja:
+  - **Kopi Susu Gula Aren**: 1 × Rp 18.000 -> **Rp 18.000**
+  - **Nasi Goreng Spesial**: 1 × Rp 32.000 -> **Rp 32.000**
+  - **Cinnamon Roll Glaze**: 1 × Rp 22,000 -> **Rp 22,000**
+* Kalkulasi otomatis total nilai transaksi (Rp 72.000).
+* Fitur review & inline edit nama item, kuantitas, dan harga satuan.
+* Konfirmasi dan simpan transaksi langsung ke database POS & inventori.
+
+### 6. AI Chatbot PaluPay Copilot (`/ai-assistant`)
 * Terhubung langsung dengan database transaksi dan inventori secara real-time.
 * **Quick Prompt Chips:**
   - *"Berapa omzet hari ini?"* (Menghitung total omzet, breakdown tunai/QRIS/kartu, rata-rata transaksi)
@@ -52,8 +62,14 @@
    - Klik tombol **Stok** pada baris produk.
    - Tambahkan kuantitas barang masuk atau koreksi stok -> Simpan.
    - Perhatikan badge status berubah secara real-time (dari *Habis*/*Menipis* menjadi *Aman*).
-3. **Simulasi AI Assistant:**
-   - Buka menu **KasirAI Copilot** (`/ai-assistant`).
+3. **Simulasi OCR Pembukuan:**
+   - Buka menu **OCR Pembukuan** (`/ocr-bookkeeping`) atau klik tombol **OCR Pembukuan** di Kasir POS.
+   - Klik tombol **Uji Coba Cepat** atau unggah foto catatan tulisan tangan.
+   - Amati simulasi pemindaian OCR mendeteksi 3 item transaksi.
+   - Periksa format struk transaksi dan ubah kuantitas/harga pada mode edit.
+   - Klik **Konfirmasi & Simpan** untuk mencatat transaksi ke sistem POS.
+4. **Simulasi AI Assistant:**
+   - Buka menu **PaluPay Copilot** (`/ai-assistant`).
    - Klik chip *"Cek Omzet Hari Ini"* atau *"Cek Stok Menipis"*.
    - AI akan memberikan respon analitis mendalam berdasarkan data transaksi dan stok toko terkini!
 

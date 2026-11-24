@@ -21,12 +21,18 @@ const DashboardPage = lazy(() =>
 const AIAssistantPage = lazy(() =>
   import('../pages/AIAssistantPage').then((m) => ({ default: m.AIAssistantPage }))
 )
+const OCRBookkeepingPage = lazy(() =>
+  import('../pages/OCRBookkeepingPage').then((m) => ({ default: m.OCRBookkeepingPage }))
+)
 
 const PageLoader = () => (
   <div className="min-h-screen bg-[#FAFAFA] flex items-center justify-center">
     <div className="flex flex-col items-center gap-3">
-      <Loader2 className="w-8 h-8 animate-spin text-zinc-900" />
-      <span className="text-xs font-semibold text-zinc-500">Memuat KasirAI...</span>
+      <img src="/favicon.png" alt="PaluPay" className="w-10 h-10 object-contain animate-pulse" />
+      <div className="flex items-center gap-2">
+        <Loader2 className="w-4 h-4 animate-spin text-zinc-900" />
+        <span className="text-xs font-semibold text-zinc-500">Memuat PaluPay...</span>
+      </div>
     </div>
   </div>
 )
@@ -76,6 +82,14 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<PageLoader />}>
             <DashboardPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: '/ocr-bookkeeping',
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <OCRBookkeepingPage />
           </Suspense>
         ),
       },

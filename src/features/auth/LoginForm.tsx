@@ -30,7 +30,7 @@ export const LoginForm: React.FC = () => {
   } = useForm<LoginFormData>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
-      email: 'kasir@kasirai.id',
+      email: 'kasir@palupay.id',
       password: 'password123',
     },
   })
@@ -39,7 +39,7 @@ export const LoginForm: React.FC = () => {
     setIsLoading(true)
     try {
       await login(data.email)
-      showToast('Login Berhasil', 'Selamat datang di sistem KasirAI', 'success')
+      showToast('Login Berhasil', 'Selamat datang di sistem PaluPay', 'success')
       navigate('/cashier')
     } catch {
       showToast('Gagal Masuk', 'Periksa kembali email dan kata sandi Anda', 'error')
@@ -50,10 +50,10 @@ export const LoginForm: React.FC = () => {
 
   const fillQuickDemo = (role: 'cashier' | 'admin') => {
     if (role === 'cashier') {
-      setValue('email', 'kasir@kasirai.id')
+      setValue('email', 'kasir@palupay.id')
       setValue('password', 'kasir123')
     } else {
-      setValue('email', 'admin@kasirai.id')
+      setValue('email', 'admin@palupay.id')
       setValue('password', 'admin123')
     }
   }

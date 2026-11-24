@@ -103,7 +103,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
       orderType,
       tableNumber: orderType === 'dine-in' ? tableNumber : undefined,
       customerName: customerName || undefined,
-      cashierName: user?.name || 'Kasir KasirAI',
+      cashierName: user?.name || 'Kasir PaluPay',
     })
 
     setIsProcessing(false)

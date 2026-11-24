@@ -110,7 +110,7 @@ export const useTransactionStore = create<TransactionState>()(
       },
     }),
     {
-      name: 'kasirai-transaction-storage',
+      name: 'palupay-transaction-storage',
     }
   )
 )

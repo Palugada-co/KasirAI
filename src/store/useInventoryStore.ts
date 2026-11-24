@@ -128,7 +128,7 @@ export const useInventoryStore = create<InventoryState>()(
       },
     }),
     {
-      name: 'kasirai-inventory-storage',
+      name: 'palupay-inventory-storage',
     }
   )
 )

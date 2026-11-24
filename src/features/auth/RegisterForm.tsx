@@ -31,9 +31,9 @@ export const RegisterForm: React.FC = () => {
   } = useForm<RegisterFormData>({
     resolver: zodResolver(registerSchema),
     defaultValues: {
-      name: 'Owner KasirAI',
-      storeName: 'KasirAI Coffee & Eatery',
-      email: 'owner@kasirai.id',
+      name: 'Owner PaluPay',
+      storeName: 'PaluPay Coffee & Eatery',
+      email: 'owner@palupay.id',
       password: 'password123',
     },
   })
@@ -71,7 +71,7 @@ export const RegisterForm: React.FC = () => {
             Nama Usaha / Toko
           </label>
           <Input
-            placeholder="Misal: Kopi Kenangan KasirAI"
+            placeholder="Misal: Kopi Kenangan PaluPay"
             leftIcon={<Store className="w-4 h-4" />}
             error={errors.storeName?.message}
             {...register('storeName')}

@@ -12,16 +12,16 @@ interface UserState extends AuthSession {
 const DEFAULT_USER: User = {
   id: 'usr-01',
   name: 'Rian Pratama',
-  email: 'kasir@kasirai.id',
+  email: 'kasir@palupay.id',
   role: 'cashier',
-  storeName: 'KasirAI Coffee & Eatery',
+  storeName: 'PaluPay Coffee & Eatery',
   avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
 }
 
 export const useUserStore = create<UserState>()(
   persist(
     (set) => ({
-      token: 'kasirai-mock-jwt-token-xyz123',
+      token: 'palupay-mock-jwt-token-xyz123',
       user: DEFAULT_USER,
       isAuthenticated: true,
 
@@ -33,11 +33,11 @@ export const useUserStore = create<UserState>()(
           name: email.split('@')[0].toUpperCase(),
           email,
           role,
-          storeName: 'KasirAI Coffee & Eatery',
+          storeName: 'PaluPay Coffee & Eatery',
           avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80',
         }
         set({
-          token: 'kasirai-jwt-' + Math.random().toString(36).substring(7),
+          token: 'palupay-jwt-' + Math.random().toString(36).substring(7),
           user,
           isAuthenticated: true,
         })
@@ -54,7 +54,7 @@ export const useUserStore = create<UserState>()(
           storeName,
         }
         set({
-          token: 'kasirai-jwt-' + Math.random().toString(36).substring(7),
+          token: 'palupay-jwt-' + Math.random().toString(36).substring(7),
           user,
           isAuthenticated: true,
         })
@@ -76,7 +76,7 @@ export const useUserStore = create<UserState>()(
       },
     }),
     {
-      name: 'kasirai-auth-storage',
+      name: 'palupay-auth-storage',
     }
   )
 )

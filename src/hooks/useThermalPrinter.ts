@@ -49,7 +49,7 @@ export function useThermalPrinter() {
   }, [playPrintFeedback])
 
   const generateEscPosText = useCallback(
-    (trx: Transaction, storeName = 'KasirAI Coffee & Eatery'): string => {
+    (trx: Transaction, storeName = 'PaluPay Coffee & Eatery'): string => {
       const width = paperSize === '58mm' ? 32 : 48
       const separator = '-'.repeat(width)
 
@@ -96,7 +96,7 @@ export function useThermalPrinter() {
       lines.push(row('Kembalian:', formatRupiah(trx.changeAmount)))
       lines.push(separator)
       lines.push(center('Terima kasih atas kunjungan Anda!'))
-      lines.push(center('Powered by KasirAI'))
+      lines.push(center('Powered by PaluPay'))
       lines.push('\n\n')
 
       return lines.join('\n')

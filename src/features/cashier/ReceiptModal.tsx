@@ -17,7 +17,7 @@ export const ReceiptModal: React.FC<ReceiptModalProps> = ({
   isOpen,
   onClose,
   transaction,
-  storeName = 'KasirAI Coffee & Eatery',
+  storeName = 'PaluPay Coffee & Eatery',
 }) => {
   const { paperSize, setPaperSize, isPrinting, printReceipt, generateEscPosText } =
     useThermalPrinter()
@@ -198,7 +198,7 @@ export const ReceiptModal: React.FC<ReceiptModalProps> = ({
               ))}
             </div>
             <p className="text-[10px] text-zinc-400 font-sans">
-              KasirAI Smart POS • POS System
+              PaluPay Smart POS • POS System
             </p>
           </div>
         </div>

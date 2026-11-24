@@ -92,7 +92,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   },
   {
     id: 'prod-6',
-    name: 'Nasi Goreng Spesial KasirAI',
+    name: 'Nasi Goreng Spesial',
     sku: 'FOD-001',
     barcode: '8993001001',
     categoryId: 'food',
@@ -172,7 +172,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   },
   {
     id: 'prod-11',
-    name: 'KasirAI Smart Tumbler 500ml',
+    name: 'Smart Tumbler 500ml',
     sku: 'RTL-001',
     barcode: '8995001001',
     categoryId: 'retail',

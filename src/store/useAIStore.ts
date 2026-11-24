@@ -47,7 +47,7 @@ const INITIAL_MESSAGES: ChatMessage[] = [
   {
     id: 'msg-welcome',
     sender: 'assistant',
-    content: `Halo! Saya **KasirAI Assistant (OpenClaw Engine)**. 
+    content: `Halo! Saya **PaluPay Copilot (OpenClaw Engine)**. 
 
 Saya terhubung langsung dengan sistem kasir, data transaksi real-time, dan stok inventori toko Anda. Ada yang bisa saya bantu analisa hari ini?`,
     timestamp: new Date().toISOString(),
@@ -195,7 +195,7 @@ ${lowList}
 
             const list = sorted.length
               ? sorted.map((s, idx) => `${idx + 1}. **${s.name}** — Terjual: **${s.qty}x** (${formatRupiah(s.revenue)})`).join('\n')
-              : '1. **Kopi Susu Gula Aren**\n2. **Nasi Goreng Spesial KasirAI**\n3. **Butter Croissant Artisanal**'
+              : '1. **Kopi Susu Gula Aren**\n2. **Nasi Goreng Spesial**\n3. **Butter Croissant Artisanal**'
 
             replyText = `🔥 **Peringkat Menu Paling Laris:**
 
@@ -206,7 +206,7 @@ ${list}
           // Intent: Promo & Bundling
           else if (lower.includes('promo') || lower.includes('bundle') || lower.includes('paket') || lower.includes('diskon')) {
             metadataType = 'recommendation'
-            replyText = `✨ **Rekomendasi Paket Bundling KasirAI:**
+            replyText = `✨ **Rekomendasi Paket Bundling PaluPay:**
 
 1. ☕🥐 **"Paket Ngopi Santai"**
    - 1x Kopi Susu Gula Aren (Rp 18.000)
@@ -216,7 +216,7 @@ ${list}
    - *Perkiraan Margin Laba:* ~45%
 
 2. 🍛🥤 **"Paket Kenyang Siang"**
-   - 1x Nasi Goreng Spesial KasirAI (Rp 32.000)
+   - 1x Nasi Goreng Spesial (Rp 32.000)
    - 1x Ice Tea / Americano (Rp 22.000)
    - *Harga Normal:* Rp 54.000
    - **Harga Bundle Promo:** **Rp 45.000**
@@ -242,7 +242,7 @@ ${list}
           else {
             replyText = `Terima kasih atas pertanyaannya! 
 
-Sebagai asisten pintar **KasirAI**, saya dapat membantu Anda menganalisa:
+Sebagai asisten pintar **PaluPay**, saya dapat membantu Anda menganalisa:
 1. **Omzet & Laporan Penjualan** *(contoh: "Berapa omzet hari ini?")*
 2. **Peringatan Stok Barang** *(contoh: "Barang apa yang mau habis?")*
 3. **Produk Terlaris** *(contoh: "Apa menu paling laku?")*
@@ -278,7 +278,7 @@ Silakan pilih quick prompt di atas atau ketik instruksi spesifik Anda.`
       },
     }),
     {
-      name: 'kasirai-ai-chat-storage',
+      name: 'palupay-ai-chat-storage',
     }
   )
 )

@@ -8,12 +8,15 @@ import { PaymentModal } from '../features/cashier/PaymentModal'
 import { ReceiptModal } from '../features/cashier/ReceiptModal'
 import { useInventoryStore } from '../store/useInventoryStore'
 import { useCartStore } from '../store/useCartStore'
+import { useNavigate } from 'react-router-dom'
+import { Button } from '../components/ui/Button'
 import { useScanner } from '../hooks/useScanner'
 import { useToast } from '../components/shared/Toast'
 import { Product, Transaction } from '../types'
-import { X, Sparkles, ShoppingBag } from 'lucide-react'
+import { ScanLine } from 'lucide-react'
 
 export const CashierPage: React.FC = () => {
+  const navigate = useNavigate()
   const { products, categories } = useInventoryStore()
   const { cartItems, addToCart } = useCartStore()
   const { showToast } = useToast()
@@ -91,7 +94,7 @@ export const CashierPage: React.FC = () => {
 
   return (
     <PageContainer
-      title="Kasir POS KasirAI"
+      title="Kasir POS PaluPay"
       subtitle="Tekan Ctrl+K untuk mencari produk secara cepat"
       onToggleCart={() => setIsMobileCartOpen(!isMobileCartOpen)}
     >
@@ -100,11 +103,23 @@ export const CashierPage: React.FC = () => {
         <div className="flex-1 flex flex-col p-4 sm:p-6 overflow-y-auto">
           {/* Top Search & Filter Bar */}
           <div className="space-y-3 mb-5">
-            <SearchBar
-              value={searchQuery}
-              onChange={setSearchQuery}
-              placeholder="Cari nama menu, minuman, atau scan barcode..."
-            />
+            <div className="flex items-center gap-2">
+              <SearchBar
+                value={searchQuery}
+                onChange={setSearchQuery}
+                placeholder="Cari nama menu, minuman, atau scan barcode..."
+                className="flex-1"
+              />
+              <Button
+                variant="outline"
+                onClick={() => navigate('/ocr-bookkeeping')}
+                className="h-11 shrink-0 text-xs font-semibold gap-1.5 border-zinc-200 bg-white hover:bg-zinc-50 shadow-2xs"
+                title="Pindai catatan pembukuan atau nota tulisan tangan"
+              >
+                <ScanLine className="w-4 h-4 text-zinc-700" />
+                <span className="hidden sm:inline">OCR Pembukuan</span>
+              </Button>
+            </div>
 
             <CategoryFilter
               categories={categories}
